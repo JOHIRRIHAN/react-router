@@ -1,16 +1,18 @@
 // import React from 'react'
 
-import { useLoaderData, useNavigate } from "react-router-dom"
+import { useLoaderData, useNavigate, useParams } from "react-router-dom"
 
 const PostDetails = () => {
     const post = useLoaderData();
+    const {postId} = useParams();
     const {id, title, body} = post;
     const navigate = useNavigate();
     const  handleGoBack = ()=>{
       navigate(-1);
     }
+    console.log(postId)
   return (
-    <div>
+    <div> 
         <h4>PostDetails: {id}</h4>
         <p>title: {title}</p>
         <p><small>{body}</small></p>
@@ -19,4 +21,4 @@ const PostDetails = () => {
   )
 }
 
-export default PostDetails
+export default PostDetails;
